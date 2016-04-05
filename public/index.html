@@ -79,9 +79,9 @@
         <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.15)">
           <div style="height: 300px; min-height: 300px">
 
-            <h3 id="error-message" style="background-color: black; color: white; padding: 10px; width: 400px; border-radius: 5px; display: none"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
+            <p id="error-message" style="background-color: black; color: white; padding: 10px; width: 320px; border-radius: 5px; display: none"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
               </span> > Error: Installation corrupted. &nbsp&nbsp&nbsp&#8239 > <span id="abort"></span>
-            </h3>
+            </p>
 
             <p id="glitch-window" style="display: none"><span class="glitch-type" style="color: white;"></span></p>
 
@@ -103,7 +103,8 @@
         $(function(){
             $("#abort").typed({
               strings: ["^2500 Aborting^300.^300.^300."],
-              typeSpeed: 100
+              typeSpeed: 100,
+              showCursor: false
             });
         });
 
@@ -117,10 +118,13 @@
       }
       window.setTimeout(introError, 1000)
 
-      function fadeErrorMessage(){
-        $('#error-message').fadeOut(1000)
-      }
-      window.setTimeout(fadeErrorMessage, 6500)
+      // function fadeErrorMessage(){
+      //   // $('#error-message').fadeOut(1000)
+      //     $("#abort").typed({
+      //       showCursor: false,
+      //     })
+      //   }
+      // window.setTimeout(fadeErrorMessage, 6500)
 
       </script>
 
