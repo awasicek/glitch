@@ -7,7 +7,7 @@ var userSchema = new Schema({
     firstname: String,
     lastname: String,
     email: {type: String, unique: true, required: true},
-    password: {type: String, unique: true, required: true}
+    password: {type: String, required: true}
 })
 
 userSchema.methods.generateHash = function(password) {
