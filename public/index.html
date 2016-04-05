@@ -6,6 +6,8 @@
     <!-- LIBRARIES -->
       <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+      <!-- TypedJS -->
+    <script src="/js/typed.js"></script>
       <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -60,12 +62,46 @@
         </nav>
     <!-- Nav Bar end -->
 
-    <div class="embed-responsive embed-responsive-16by9">
+    <!-- Background Video begin -->
+    <div id="video" style="margin: 0; padding: 0">
+      <video autoplay loop muted src="./videos/background-video-abstract-hd.mp4"></video>
+    </div>
+    <!-- <div id="video" class="embed-responsive embed-responsive-16by9" style="margin: 0; padding: 0">
       <video class="embed-responsive-item" autoplay loop muted src="./videos/background-video-abstract-hd.mp4"></video>
+    </div> -->
+    <!-- Background Video end -->
+
+    <div style="min-height: 800px; height: 800px">
+
+      <br>
+      <br>
+      <div class="container">
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.15)">
+          <h1 class="typing" style="color: white">Hello? Is anyone there?</h1>
+          <p>...</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: rgba(24, 223, 230, 0.8)">Begin</a></p>
+        </div>
+      </div>
+
+      <script>
+        $(function(){
+            $(".typing").typed({
+              strings: ["Hello...? ^1000 <br> Is anyone there?"],
+              typeSpeed: 100
+            });
+        });
+      </script>
+
+      <div ui-view></div>
+
     </div>
 
+    <footer class="footer" style="background-color: rgba(20, 20, 20, 1)">
+      <div class="container">
+        <p style="text-align: center; color: rgba(24, 223, 230, 0.8)">Glitch &copy 2016</p>
+      </div>
+    </footer>
 
-    <div ui-view></div>
 
   </body>
 </html>
