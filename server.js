@@ -5,7 +5,12 @@ var
   mongoose = require('mongoose'),
   bodyParser = require('body-parser'),
   jwt = require('jsonwebtoken'),
-  path = require('path')
+  path = require('path'),
+  dotenv = require('dotenv').config({silent: true}),
+  // ** NOTE ** comment out dotenv requirement for heroku deployment because .env variables are set via CLI to heroku directly //
+  config = require('./config'),
+  User = require('./models/user'),
+  apiRoutes = require('./routes/api.js')
 
 // *** ENVIRONMENT PORT *** //
 var port = process.env.PORT || 3000
@@ -20,6 +25,9 @@ mongoose.connect(dbURL, function(err){
   console.log("Connected to MongoDB: " + dbURL)
 })
 
+// *** CONFIG *** //
+app.set('superSecret', config.secret);
+
 // *** MIDDLEWARE *** //
 app.use(logger('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
@@ -31,7 +39,7 @@ app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
-// app.use('/api', userApiRoutes)
+app.use('/api', apiRoutes)
 
 
 // *** SERVER LISTENING *** //
