@@ -1,6 +1,6 @@
 (function(){
   angular.module('glitch')
-    .service('auth', authService)
+    .service('authService', authService)
 
   authService.$inject = ['$window']
 

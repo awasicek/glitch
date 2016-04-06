@@ -1,3 +1,10 @@
-<div style="min-height: 675px; height: 675px">
+<div style="min-height: 570px; height: 570px">
   <h1>Users</h1>
+  <button ng-click="main.getUsers()">get users list</button>
+  <br><br>
+<ul>
+  <li ng-repeat="user in main.users">Name: {{user.firstname}} {{user.lastname}}. Email: {{user.email}}</li>
+</ul>
+
+  <br><br><br>
 </div>

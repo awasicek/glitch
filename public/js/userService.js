@@ -1,6 +1,6 @@
 (function(){
   angular.module('glitch')
-    .service('user', userService)
+    .service('userService', userService)
 
   userService.$inject = ['$http']
 
@@ -14,13 +14,16 @@
       });
     };
 
-    self.register = function(email, password){
+    self.register = function(email, firstname, lastname, password){
       return $http.post('api/register', {
         email: email,
+        firstname: firstname,
+        lastname: lastname,
         password: password
       });
     };
-    self.getUsers = function(name, password){
+
+    self.getUsers = function(email, password){
       return $http.get('api/users');
     };
   }

@@ -2,10 +2,10 @@
   angular.module('glitch')
     .factory('authInterceptor', authInterceptor)
 
-  function authInterceptor(auth){
+  function authInterceptor(authService){
     return {
       request: function(config) {
-        var token = auth.getToken();
+        var token = authService.getToken();
         if(token) {
           config.headers['x-access-token'] = token;
         }
@@ -13,7 +13,7 @@
       },
 
       response: function(res){
-        if(res.data.token){auth.saveToken(res.data.token)};
+        if(res.data.token){authService.saveToken(res.data.token)};
         return res;
       }
     }

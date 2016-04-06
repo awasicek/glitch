@@ -38,6 +38,7 @@ apiRouter.post('/register', function(req, res) {
         expiresInMinutes: 1440 //24 hours
       });
       res.json({
+        user: user,
         success: true,
         message: 'Successfully registered and you get a token!',
         token: token
@@ -65,6 +66,7 @@ apiRouter.post('/authenticate', function(req, res){
           expiresInMinutes: 1440 //24 hours
         });
         res.json({
+          user: user,
           success: true,
           message: 'Enjoy your token!',
           token: token
@@ -96,7 +98,7 @@ apiRouter.use(function(req, res, next){
           message: 'That token is not legitimate.'
         });
       } else {
-        // everything is good with the token, then save it to the req in other routes
+        // everything is good with the token, then save it to req in other routes
         req.decoded = decoded;
         next();
       }
@@ -111,6 +113,11 @@ apiRouter.get('/users', function(req, res) {
     res.json({success: true, message: users});
   });
 });
+
+// // Route to return current user
+// apiRouter.get('/users/currentuser', function(req, res){
+//
+// })
 
 
 
