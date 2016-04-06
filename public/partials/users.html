@@ -1,0 +1,13 @@
+<div style="min-height: 570px; height: 570px">
+  <div class="container" style="width: 500px; background-color: rgba(0, 0, 0, 0.15); padding: 20px; margin: 20px; border-radius: 5px">
+    <h1 style="color: rgba(24, 223, 230, 0.8); text-shadow: 2px 2px #202020;">Users</h1>
+    <button class="btn btn-primary" style="background-color: rgba(24, 223, 230, 0.8); text-shadow: 1px 1px #202020;" ng-click="main.getUsers()">List Users</button>
+    <br><br>
+
+    <ul class="list-group">
+      <li class="list-group-item" style="background-color: rgba(0, 0, 0, 0.3); color: white; border: none;" ng-repeat="user in main.users">Name: {{user.firstname}} {{user.lastname}}. &nbsp Email: {{user.email}}</li>
+    </ul>
+
+    <br><br><br>
+  </div>
+</div>

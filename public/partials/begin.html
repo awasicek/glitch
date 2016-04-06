@@ -1,0 +1,49 @@
+
+  <div style="min-height: 675px; height: 675px">
+
+      <br>
+      <br>
+      <div class="container">
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.15)">
+          <div style="height: 300px; min-height: 300px">
+
+            <p id="error-message" style="background-color: black; color: white; padding: 10px; width: 335px; border-radius: 5px; display: none"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
+              </span> > Error: Installation corrupted. &nbsp&nbsp&nbsp&nbsp > <span id="abort"></span>
+            </p>
+
+            <p id="glitch-window" style="display: none"><span class="glitch-type" style="color: white;"></span></p>
+
+          </div>
+
+          <p><a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: rgba(24, 223, 230, 0.8); text-shadow: 1px 1px #202020;">Begin</a></p>
+
+        </div>
+      </div>
+
+      <script>
+        $(function(){
+            $(".glitch-type").typed({
+              strings: ["^8000 Hello^500...? ^1000 <br> Is anyone out there? <br> ^1000 I think something went wrong. <br> ^1000 Please help me."],
+              typeSpeed: 50
+            });
+        });
+
+        $(function(){
+            $("#abort").typed({
+              strings: ["^2500 Aborting^300.^300.^300."],
+              typeSpeed: 100,
+              showCursor: false
+            });
+        });
+
+      function introGlitch(){
+        $('#glitch-window').fadeIn(100)
+      }
+      window.setTimeout(introGlitch, 8000)
+
+      function introError(){
+        $('#error-message').fadeIn(1000)
+      }
+      window.setTimeout(introError, 1000)
+
+      </script>
