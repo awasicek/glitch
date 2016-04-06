@@ -11,7 +11,7 @@
 
     function handleRequest(res){
       var token = res.data ? res.data.token : null;
-      console.log(res);
+      // console.log(res);
       if (token){
         // console.log('JWT:', token);
         // authService.saveToken(token);
@@ -21,14 +21,14 @@
 
     function handleSignupRequest(res){
       var token = res.data ? res.data.token : null;
-      console.log(res);
+      // console.log(res);
       if (token){
         // console.log('JWT:', token);
         // authService.saveToken(token);
-      };
-      self.message = res.data.message;
-      self.currentUser = res.data.user
-      $state.go('profile')
+        self.message = res.data.message;
+        self.currentUser = res.data.user
+        $state.go('profile')
+      } else { console.log("Error.")}
     }
 
     function handleUserRequest(res){
@@ -39,19 +39,19 @@
         // authService.saveToken(token);
       };
       self.users = res.data.message;
-      console.log(self.users)
+      // console.log(self.users)
     }
 
     function handleLoginRequest(res){
       var token = res.data ? res.data.token : null;
-      console.log(res);
+      // console.log(res);
       if (token){
         // console.log('JWT:', token);
         // authService.saveToken(token);
-      };
-      self.message = res.data.message;
-      self.currentUser = res.data.user
-      $state.go('home')
+        self.message = res.data.message;
+        self.currentUser = res.data.user
+        $state.go('home')
+      } else { console.log("Error.")}
     }
 
     self.login = function() {
@@ -78,10 +78,9 @@
       return authService.isAuthed ? authService.isAuthed() : false;
     }
 
-    self.profile = function() {
-      
+    if (self.isAuthed()){
+      self.currentUser = authService.parseJwt(authService.getToken())
+      // console.log(self.currentUser)
     }
-
   }
-
 })()

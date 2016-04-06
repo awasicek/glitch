@@ -27,8 +27,9 @@ apiRouter.post('/register', function(req, res) {
     email: req.body.email,
     password: req.body.password
   });
+  newUser.password = newUser.generateHash(req.body.password)
   // save the new user
-  newUser.save(function(err) {
+  newUser.save(function(err, user) {
     if (err) {
       console.log(err)
       res.json({success: false, message: 'Registration failed.  That email is taken.'})
@@ -58,11 +59,11 @@ apiRouter.post('/authenticate', function(req, res){
       res.json({success: false, message: 'User not found.'});
     } else if (user) {
       // password doesn't match
-      if (user.password != req.body.password){
+      if (!user.validPassword(req.body.password)){
         res.json({success: false, message: 'Incorrect password.'});
       } else {
         // It means we found the user and the passwords match
-        var token = jwt.sign(user, process.env.SECRET, {
+        var token = jwt.sign(user.toObject(), process.env.SECRET, {
           expiresInMinutes: 1440 //24 hours
         });
         res.json({
