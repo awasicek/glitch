@@ -20,10 +20,12 @@
     <script src="/js/authService.js"></script>
     <script src="/js/userService.js"></script>
     <script src="/js/mainCtrl.js"></script>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Jura' rel='stylesheet' type='text/css'>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/index.css">
   </head>
-  <body>
+  <body ng-controller="MainController as main">
 
 
     <!-- Nav Bar begin -->
@@ -39,7 +41,6 @@
               </button>
               <a class="navbar-brand" ui-sref="home" style="color: rgba(24, 223, 230, 0.8)">Glitch</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
@@ -79,6 +80,14 @@
       <div ui-view></div>
 
     </div>
+
+    <div style="width: 220px; margin: auto; padding-bottom: 10px">
+      <img src="images/finder-icon.png" style="height: 50px; width: 50px;" alt="" />
+      <img src="images/trash-icon.png" style="height: 50px; width: 50px;" alt="" />
+      <img src="images/itunes-icon.png" style="height: 50px; width: 50px;" alt="" />
+      <img src="images/system-preferences-icon.png" style="height: 50px;" alt="" />
+    </div>
+
 
     <footer class="footer" style="background-color: rgba(20, 20, 20, 1); padding-top: 10px">
       <div class="container">

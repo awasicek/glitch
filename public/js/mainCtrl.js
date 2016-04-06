@@ -1,8 +1,8 @@
 (function(){
   angular.module('glitch')
-    .controller('Main', MainCtrl);
+    .controller('MainController', MainController)
 
-  function MainCtrl(user, auth){
+  function MainController(user, auth){
     var self = this;
 
     function handleRequest(res){

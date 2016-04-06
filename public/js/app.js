@@ -6,7 +6,7 @@
     .config(function($stateProvider, $urlRouterProvider){
 
       //handle any attempts to routes other than what is listed below
-      // $urlRouterProvider.otherwise('/')
+      $urlRouterProvider.otherwise('/')
 
       //my established routes
       $stateProvider
