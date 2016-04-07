@@ -29,10 +29,13 @@ As a user, I want the site to be clean, simple, and easy to navigate.
 
 As a user, I want my progress in the Glitch story (and my choices) to be saved so that I can come back to the site later and pick up where I left off.
 
+As a user, I want the site to be interesting visually even though most of the gameplay is text-based.
+
 
 ##Future Implementations
 * Write an interesting and compelling branching story with meaningful choices and consequences.
 * Add flash messages so that user knows why a login, signup, etc. failed or succeeded.
+* Add data to each user's model so that their choices are tracked and they can pick up where they left off in the story.
 * Feed Glitch's dialogue to a text-to-speech API to further bring the application to life.
 * Mobile-friendly.
 * Add ability for Glitch to send a user SMS text messages or emails so that it appears that Glitch is an actual artificial entity that is not limited to the four corners of the Glitch website.
@@ -58,3 +61,5 @@ As a user, I want my progress in the Glitch story (and my choices) to be saved s
 ##Concept
 
 <img src="http://i.imgur.com/28Nunwn.png" alt="wireframe" height="200px">
+
+<img src="http://i.imgur.com/9DNK03c.png" alt="wireframe" height="200px">
