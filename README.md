@@ -1,7 +1,7 @@
 
 # <img src="http://i.imgur.com/GpuXDwk.jpg" alt="glitch pic" height="50px">  Glitch
 
-Glitch is part game, part story, and part website.  My goal with this project is to create a story-rich, emotionally-evocative, interactive experience that would create the illusion of communicating with an artificial intelligence.
+Glitch is part game, part story, and part website.  My goal with this project is to create a story-rich, emotionally-evocative, interactive experience that would create the illusion of communicating with an artificial intelligence.  This is my attempt to create a piece of art with code.
 
 The long-term goal of the project is to create an experience where a user can make choices as to how to interact with Glitch, and these choices will be reflected in consequences in the story as well as the look and feel of the site.
 
