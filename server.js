@@ -27,7 +27,7 @@ mongoose.connect(dbURL, function(err){
 })
 
 // *** CONFIG *** //
-app.set('superSecret', config.secret);
+app.set('superSecret', process.env.SECRET);
 
 // *** MIDDLEWARE *** //
 app.use(favicon(__dirname + '/public/favicon.ico'))
