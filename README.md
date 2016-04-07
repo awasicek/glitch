@@ -32,6 +32,7 @@ As a user, I want my progress in the Glitch story (and my choices) to be saved s
 
 ##Future Implementations
 * Write an interesting and compelling branching story with meaningful choices and consequences.
+* Add flash messages so that user knows why a login, signup, etc. failed or succeeded.
 * Feed Glitch's dialogue to a text-to-speech API to further bring the application to life.
 * Mobile-friendly.
 * Add ability for Glitch to send a user SMS text messages or emails so that it appears that Glitch is an actual artificial entity that is not limited to the four corners of the Glitch website.

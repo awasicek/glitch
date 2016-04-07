@@ -26,5 +26,11 @@
     self.getUsers = function(email, password){
       return $http.get('api/users');
     };
+
+    self.update = function(id, data) {
+      return $http.patch('/api/users/' + id, data)
+    }
+
   }
+
 })()
