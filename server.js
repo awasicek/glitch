@@ -45,6 +45,6 @@ app.use('/api', apiRoutes)
 
 
 // *** SERVER LISTENING *** //
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log("Server running on: " + port + ".")
 })
