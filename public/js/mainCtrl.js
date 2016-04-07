@@ -82,5 +82,27 @@
       self.currentUser = authService.parseJwt(authService.getToken())
       // console.log(self.currentUser)
     }
+
+    var user = []
+
+    self.edit = function(){
+      self.editing = true
+      self.editingUser = {
+        firstname: self.currentUser.firstname,
+        lastname: self.currentUser.lastname,
+        email: self.currentUser.email,
+        password: null
+      }
+    }
+
+    self.update = function(){
+      // console.log(self.currentUser)
+      userService.update(self.currentUser._id, self.editingUser).success(function(response){
+        self.editing = false
+        // console.log(response)
+        self.currentUser = response.user
+      })
+    }
+
   }
 })()

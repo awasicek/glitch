@@ -115,10 +115,24 @@ apiRouter.get('/users', function(req, res) {
   });
 });
 
-// // Route to return current user
-// apiRouter.get('/users/currentuser', function(req, res){
-//
-// })
+// Route to Update user -- available with PATCH at /api/users
+apiRouter.patch('/users/:id', function(req, res){
+  var updatingUser
+  User.findOne({_id: req.params.id}, function(err, user){
+    if(err) console.log(err)
+    var updatingUser = user
+    // console.log("TEST")
+    // console.log(updatingUser)
+    if (!(req.body.password === null)){
+      req.body.password = updatingUser.generateHash(req.body.password)
+    } else { req.body.password = user.password }
+    User.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, user){
+      if(err) console.log(err)
+      res.json({success: true, message: "User updated.", user: user})
+      // console.log("Success -- user updated.")
+    })
+  })
+})
 
 
 
