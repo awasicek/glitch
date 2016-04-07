@@ -56,7 +56,7 @@
                 <li><a ui-sref="login" ng-hide="main.isAuthed()">Login</a></li>
                 <li><a ng-click="main.logout()" ng-show="main.isAuthed()" style="cursor: pointer">Logout</a></li>
                 <li><a ui-sref="profile" ng-show="main.isAuthed()">Profile</a></li>
-                <li><a ui-sref="begin">Begin</a></li>
+                <li><a ui-sref="begin" ng-show="main.isAuthed()">Begin</a></li>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
