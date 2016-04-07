@@ -7,7 +7,7 @@ var
   jwt = require('jsonwebtoken'),
   path = require('path'),
   favicon = require('serve-favicon'),
-  dotenv = require('dotenv').config({silent: true}),
+  // dotenv = require('dotenv').config({silent: true}),
   // ** NOTE ** comment out dotenv requirement for heroku deployment because .env variables are set via CLI to heroku directly //
   config = require('./config'),
   User = require('./models/user'),
@@ -17,8 +17,8 @@ var
 var port = process.env.PORT || 3000
 
 // *** DATABASE *** //
-var dbURL = 'mongodb://localhost/project-glitch'
-// var dbURL = 'mongodb://' + process.env.MLAB_USERNAME + ':' + process.env.MLAB_PASSWORD + '@ds063134.mlab.com:63134/heroku_v7560t60'
+// var dbURL = 'mongodb://localhost/project-glitch'
+var dbURL = 'mongodb://' + process.env.MLAB_USERNAME + ':' + process.env.MLAB_PASSWORD + '@ds019480.mlab.com:19480/heroku_n3p20jtb'
 
 
 mongoose.connect(dbURL, function(err){
