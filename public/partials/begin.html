@@ -15,7 +15,7 @@
 
           </div>
 
-          <p><a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: rgba(24, 223, 230, 0.8); text-shadow: 1px 1px #202020;">Begin</a></p>
+          <p id="continueButton" ui-sref="chapter1part1" style="display: none"><a class="btn btn-primary btn-lg" href="#" role="button" style="background-color: rgba(24, 223, 230, 0.8); text-shadow: 1px 1px #202020;">Continue</a></p>
 
         </div>
       </div>
@@ -45,5 +45,10 @@
         $('#error-message').fadeIn(1000)
       }
       window.setTimeout(introError, 1000)
+
+      function introContinueButton(){
+        $('#continueButton').fadeIn(400)
+      }
+      window.setTimeout(introContinueButton, 20000)
 
       </script>

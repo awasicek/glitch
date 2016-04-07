@@ -34,6 +34,14 @@
           url: '/begin',
           templateUrl: '/partials/begin.html'
         })
+        .state('chapter1part1', {
+          url: '/c1p1',
+          templateUrl: '/partials/chapter1part1.html'
+        })
+        .state('chapter1part2', {
+          url: '/c1p2',
+          templateUrl: '/partials/chapter1part2.html'
+        })
       })
 
 

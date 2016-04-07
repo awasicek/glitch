@@ -11,7 +11,9 @@ var
   // ** NOTE ** comment out dotenv requirement for heroku deployment because .env variables are set via CLI to heroku directly //
   // config = require('./config'),
   User = require('./models/user'),
-  apiRoutes = require('./routes/api.js')
+  apiRoutes = require('./routes/api.js'),
+  storyRoutes = require('./routes/story.js')
+
 
 // *** ENVIRONMENT PORT *** //
 var port = process.env.PORT || 3000
@@ -41,8 +43,9 @@ app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
-app.use('/api', apiRoutes)
+app.use('/api/story', storyRoutes)
 
+app.use('/api', apiRoutes)
 
 // *** SERVER LISTENING *** //
 app.listen(port, function(){

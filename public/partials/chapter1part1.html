@@ -1,0 +1,79 @@
+
+  <div style="min-height: 675px; height: 675px">
+
+      <br>
+      <br>
+      <div class="container">
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.15)">
+          <div style="height: 300px; min-height: 300px">
+
+            <p id="error-message" style="background-color: black; color: white; padding: 10px; width: 335px; border-radius: 5px; display: none"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true">
+            </span> > Server: Socket initialized. &nbsp&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &#8239 > <span id="abort"></span>
+            </p>
+
+            <p id="glitch-window" style="display: none"><span class="glitch-type" style="color: white;"></span></p>
+
+          </div>
+
+          <button id="response1" ui-sref="chapter1part2" style="display: none; margin-bottom: 10px; background-color: rgba(0, 0, 0, 0.5); color: white; padding: 5px; border-radius: 5px; border: none; font-size: 16px; text-align: left"></button>
+          <button id="response2" ui-sref="chapter1part2" style="display: none; margin-bottom: 10px; background-color: rgba(0, 0, 0, 0.5); color: white; padding: 5px; border-radius: 5px; border: none; font-size: 16px; text-align: left"></button>
+          <button id="response3" ui-sref="chapter1part2" style="display: none; margin-bottom: 10px; background-color: rgba(0, 0, 0, 0.5); color: white; padding: 5px; border-radius: 5px; border: none; font-size: 16px; text-align: left"></button>
+
+        </div>
+      </div>
+
+      <script>
+        var glitchText
+        var responseText1
+        var responseText2
+        var responseText3
+
+        $
+          .ajax({
+            method: 'get',
+            url: '/api/story/1'
+          })
+          .done(function(data){
+            // console.log(data)
+            glitchText = data.story.textone
+            responseText1 = data.story.responseone
+            responseText2 = data.story.responsetwo
+            responseText3 = data.story.responsethree
+
+            $('#response1').append(responseText1)
+            $('#response2').append(responseText2)
+            $('#response3').append(responseText3)
+
+            $(function(){
+                $("#abort").typed({
+                  strings: ["^2500 Connecting^300.^300.^300."],
+                  typeSpeed: 100,
+                  showCursor: false
+                });
+            });
+            function introGlitch(){
+              $('#glitch-window').fadeIn(100)
+              $(function(){
+                  $(".glitch-type").typed({
+                    strings: [glitchText],
+                    typeSpeed: 50
+                  });
+              });
+            }
+            window.setTimeout(introGlitch, 7000)
+
+            function introError(){
+              $('#error-message').fadeIn(1000)
+            }
+            window.setTimeout(introError, 1000)
+
+            function introResponses(){
+              $('#response1').fadeIn(400)
+              $('#response2').fadeIn(400)
+              $('#response3').fadeIn(400)
+            }
+            window.setTimeout(introResponses, 25000)
+
+          })
+
+      </script>
