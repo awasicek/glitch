@@ -2,7 +2,7 @@ var
   express = require('express'),
   User = require('../models/user'),
   jwt = require('jsonwebtoken'),
-  // dotenv = require('dotenv').config({silent: true}),
+  dotenv = require('dotenv').config({silent: true}),
   // apiCtrl = require('../controllers/api.js'),
   apiRouter = express.Router()
 
