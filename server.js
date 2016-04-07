@@ -9,7 +9,7 @@ var
   favicon = require('serve-favicon'),
   // dotenv = require('dotenv').config({silent: true}),
   // ** NOTE ** comment out dotenv requirement for heroku deployment because .env variables are set via CLI to heroku directly //
-  config = require('./config'),
+  // config = require('./config'),
   User = require('./models/user'),
   apiRoutes = require('./routes/api.js')
 
