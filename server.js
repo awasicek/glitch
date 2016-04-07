@@ -6,6 +6,7 @@ var
   bodyParser = require('body-parser'),
   jwt = require('jsonwebtoken'),
   path = require('path'),
+  favicon = require('serve-favicon'),
   dotenv = require('dotenv').config({silent: true}),
   // ** NOTE ** comment out dotenv requirement for heroku deployment because .env variables are set via CLI to heroku directly //
   config = require('./config'),
@@ -29,6 +30,7 @@ mongoose.connect(dbURL, function(err){
 app.set('superSecret', config.secret);
 
 // *** MIDDLEWARE *** //
+app.use(favicon(__dirname + '/public/favicon.ico'))
 app.use(logger('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
