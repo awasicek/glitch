@@ -54,10 +54,11 @@
             });
             function introGlitch(){
               $('#glitch-window').fadeIn(100)
+
               $(function(){
                   $(".glitch-type").typed({
                     strings: [glitchText],
-                    // strings: ["test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"],
+                    contentType: 'text',
                     typeSpeed: 50
                   });
               });
